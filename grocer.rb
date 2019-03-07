@@ -27,7 +27,7 @@ def apply_coupons(cart, coupons)
       end
     end
   }
-  cart = cart.delete_if {|x,y|
+    cart.delete_if {|x,y|
     cart[x][:price] === 0 
   }
 end
