@@ -18,14 +18,16 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  coupons.each {|x,y|
-  binding.pry
-    if cart.include?(x)
-      if cart[x][:count] <= coupons[x][:num]
-        cart["#{x} W/COUPON"] = {price: coupons[x][:cost], clearance: cart[x][:clearance], count: (cart[x][:count]/coupons[x][:num]).floor}
-        cart[x][:count] = cart[x][:count]%coupons[x][:num]
+  coupons.each {|x|
+    x.each {|x,y|
+      binding.pry
+      if cart.include?(x)
+        if cart[x][:count] <= coupons[x][:num]
+          cart["#{x} W/COUPON"] = {price: coupons[x][:cost], clearance: cart[x][:clearance], count: (cart[x][:count]/coupons[x][:num]).floor}
+          cart[x][:count] = cart[x][:count]%coupons[x][:num]
+        end
       end
-    end
+    }
   }
     cart.delete_if {|x,y|
     cart[x][:price] === 0 
