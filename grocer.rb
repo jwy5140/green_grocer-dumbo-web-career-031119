@@ -29,6 +29,8 @@ def apply_coupons(cart, coupons)
   cart.delete_if! {|x,y|
     cart[x][:price] = 0 
   }
+  cart 
+  binding.pry
 end
 
 def apply_clearance(cart)
