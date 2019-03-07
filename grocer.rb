@@ -11,6 +11,7 @@ def consolidate_cart(cart)
       else 
         ans[x][:count] += 1
       end
+      binding.pry
     }
   }
   ans 
