@@ -18,7 +18,6 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  binding.pry
   coupons.each {|x,y|
     if cart.include?(x)
       if cart[x][:count] <= coupons[x][:num]
