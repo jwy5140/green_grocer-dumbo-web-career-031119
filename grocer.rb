@@ -1,7 +1,12 @@
 require 'pry'
 
 def consolidate_cart(cart)
-  binding.pry
+  ans = {}
+  cart.each {|x|
+    x.each {|x,y|
+      binding.pry
+    }
+  }
 end
 
 def apply_coupons(cart, coupons)
