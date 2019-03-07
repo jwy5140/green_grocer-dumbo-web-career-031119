@@ -4,7 +4,6 @@ def consolidate_cart(cart)
   ans = {}
   cart.each {|x|
     x.each {|x,y|
-    binding.pry
       if !ans[x]
         ans[x] = y 
       elsif !ans[x][:count]
