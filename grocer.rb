@@ -3,6 +3,7 @@ require 'pry'
 def consolidate_cart(cart)
   ans = {}
   cart.each {|x|
+  binding.pry
     x.each {|x,y|
       if !ans[x]
         ans[x] = y 
