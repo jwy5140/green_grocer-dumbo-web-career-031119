@@ -18,7 +18,11 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  cart.
+  coupons.each {|x,y|
+    if cart.include?(x)
+      if cart[x][:count] =< coupons[x][:num]
+        cart["#{x} W/COUPON"] = {price: coupons[x][:cost], }
+        
 end
 
 def apply_clearance(cart)
