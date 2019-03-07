@@ -8,7 +8,7 @@ def consolidate_cart(cart)
         ans[x] = y 
       end 
       if !ans[x][:count]
-        ans[x][:count] = 0 
+        ans[x][:count] = 1 
       else 
         ans[x][:count] += 1
       end
