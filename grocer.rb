@@ -14,7 +14,6 @@ def consolidate_cart(cart)
     }
   }
   ans 
-  binding.pry
 end
 
 def apply_coupons(cart, coupons)
