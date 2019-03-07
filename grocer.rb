@@ -6,15 +6,16 @@ def consolidate_cart(cart)
     x.each {|x,y|
       if !ans[x]
         ans[x] = y 
-      elsif !ans[x][:count]
+      end 
+      if !ans[x][:count]
         ans[x][:count] = 0 
       else 
         ans[x][:count] += 1
       end
-      binding.pry
     }
   }
   ans 
+  binding.pry
 end
 
 def apply_coupons(cart, coupons)
