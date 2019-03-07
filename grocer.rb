@@ -20,7 +20,7 @@ end
 def apply_coupons(cart, coupons)
   coupons.each {|x,y|
     if cart.include?(x)
-      if cart[x][:count] =< coupons[x][:num]
+      if cart[x][:count] <= coupons[x][:num]
         cart["#{x} W/COUPON"] = {price: coupons[x][:cost], clearance: cart[x][:clearance], count: (cart[x][:count]/coupons[x][:num]).floor}
         cart[x][:count] = cart[x][:count]%coupons[x][:num]
       end
