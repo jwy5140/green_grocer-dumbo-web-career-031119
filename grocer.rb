@@ -19,6 +19,7 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each {|x,y|
+  binding.pry
     if cart.include?(x)
       if cart[x][:count] <= coupons[x][:num]
         cart["#{x} W/COUPON"] = {price: coupons[x][:cost], clearance: cart[x][:clearance], count: (cart[x][:count]/coupons[x][:num]).floor}
@@ -29,7 +30,6 @@ def apply_coupons(cart, coupons)
   cart = cart.delete_if {|x,y|
     cart[x][:price] === 0 
   }
-  binding.pry
 end
 
 def apply_clearance(cart)
