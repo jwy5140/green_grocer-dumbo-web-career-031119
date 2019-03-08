@@ -21,6 +21,7 @@ def apply_coupons(cart, coupons)
   coupons.each_with_index {|x,y|
     if cart[coupons[y][:item]]
       if cart[coupons[y][:item]][:count] <= coupons[y][:num]
+        binding.pry
         cart["#{coupons[y][:item]} W/COUPON"] = {price: coupons[y][:cost], clearance: cart[coupons[y][:item]][:clearance], count: (cart[coupons[y][:item]][:count]/coupons[x][:num]).floor}
         cart[coupons[y][:item]][:count] = cart[coupons[y][:item]][:count]%coupons[x][:num]
       end
