@@ -19,7 +19,6 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each_with_index {|x,y|
-  binding.pry
     if cart.include?(coupons[y][:item])
       if cart[x][:count] <= coupons[y][:num]
         cart["#{coupons[y][:item]} W/COUPON"] = {price: coupons[x][:cost], clearance: cart[x][:clearance], count: (cart[x][:count]/coupons[x][:num]).floor}
@@ -28,8 +27,10 @@ def apply_coupons(cart, coupons)
     end
   }
     cart.delete_if {|x,y|
-    cart[x][:price] === 0 
+    cart[coupons[y][:price] === 0 
   }
+  cart
+  binding.pry
 end
 
 def apply_clearance(cart)
