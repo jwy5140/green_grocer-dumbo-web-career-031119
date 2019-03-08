@@ -30,7 +30,6 @@ def apply_coupons(cart, coupons)
     cart[x][:count] === 0 
   }
   cart
-  binding.pry
 end
 
 def apply_clearance(cart)
