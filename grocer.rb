@@ -27,8 +27,7 @@ def apply_coupons(cart, coupons)
     end
   }
     cart.delete_if {|x,y|
-    binding.pry
-    cart[coupons[y][:item]][:price] === 0 
+    cart[x][:count] === 0 
   }
   cart
   binding.pry
