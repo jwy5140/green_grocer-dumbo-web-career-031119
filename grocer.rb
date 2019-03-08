@@ -18,6 +18,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  binding.pry
   coupons.each_with_index {|x,y|
     if cart.include?(coupons[y][:item])
       if cart[x][:count] <= coupons[y][:num]
@@ -30,7 +31,6 @@ def apply_coupons(cart, coupons)
     cart[coupons[y][:price]] === 0 
   }
   cart
-  binding.pry
 end
 
 def apply_clearance(cart)
