@@ -26,9 +26,6 @@ def apply_coupons(cart, coupons)
       end
     end
   }
-    cart.delete_if {|x,y|
-    cart[x][:count] === 0 
-  }
   cart
   binding.pry
 end
