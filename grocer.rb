@@ -26,9 +26,9 @@ def apply_coupons(cart, coupons)
         cart[coupons[y][:item]][:count] = cart[coupons[y][:item]][:count]%coupons[y][:num]
       end
     end
-    binding.pry
   }
   cart
+  binding.pry
 end
 
 def apply_clearance(cart)
